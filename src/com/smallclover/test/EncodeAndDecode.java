@@ -26,6 +26,8 @@ public class EncodeAndDecode {
         ByteBuffer byteBuffer = charset.encode(str);
         CharBuffer charBuffer = charset.decode(byteBuffer);
         print(byteBuffer,charBuffer,str,ISO_8859_1);
+        System.out.println("原因：ISO-8859-1不支持中文字符集，在遇到不在码值范围内的字符时同一用十六进制3f表示十进制为63，在ASII表中为?(英文问号)。");
+        System.out.println("注意：示例字符串中的！为中文感叹号");
     }
 
     private static void print(ByteBuffer byteBuffer, CharBuffer charBuffer, String str, String charset){
